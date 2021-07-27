@@ -1,13 +1,25 @@
+'''
+Problem:
+Implement strStr().
+Return the index of the first occurrence of needle in haystack,
+or -1 if needle is not part of haystack.
+'''
+
 class Solution:
-    def strStr(self, haystack, needle):
+    '''solution for the proposed problem'''
+    def str_str(self, haystack, needle):
+        '''
+        Returns the index of needle's first occurence in a haystack
+        Arguments:
+        haystack (str) - string we use to find a needle
+        needle (str) - substring index if which we want to find in the haystack
+        '''
+
         if needle == "" or haystack == "":
             return 0
-        elif needle not in haystack:
+        if needle not in haystack:
             return -1
-        else:
-            print(haystack.find(needle))
-
-        
+        return haystack.find(needle)
 
 solution = Solution()
-solution.strStr("hello world", "wo")
+print(solution.str_str("hello world", "wo")) # 6
