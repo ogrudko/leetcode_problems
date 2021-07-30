@@ -6,7 +6,7 @@ Given an integer array nums, find the contiguous subarray (containing at least o
 # Solution
 
 class Solution:
-    def maxSubArray(self, nums) -> int:
+    def max_sub_array(self, nums) -> int:
         max_sub = nums[0]
         current_sum = 0
         for n in nums:
@@ -16,7 +16,3 @@ class Solution:
             max_sub = max(max_sub, current_sum)
         return max_sub
 
-solution = Solution()
-print(solution.maxSubArray([-2,1,-3,4,-1,2,1,-5,4])) # 6
-print(solution.maxSubArray([1])) # 1
-print(solution.maxSubArray([5,4,-1,7,8])) # 23
