@@ -8,7 +8,7 @@ You may assume the integer does not contain any leading zero, except the number 
 # Solution
 
 class Solution:
-    def plusOne(self, digits):
+    def plus_one(self, digits):
         i = 1
         plus_one = 1
         while plus_one == 1 and i <= len(digits):
@@ -24,10 +24,10 @@ class Solution:
         return digits
 
 solution = Solution()
-print(solution.plusOne([1,2,3]))    # [1,2,4]
-print(solution.plusOne([4,3,2,1]))    # [4,3,2,2]
-print(solution.plusOne([0]))    # [1]
-print(solution.plusOne([9]))    # [1, 0]
-print(solution.plusOne([9, 9]))    # [1, 0, 0 ]
-print(solution.plusOne([9, 9, 9]))    # [1, 0, 0, 0]
-print(solution.plusOne([9, 9, 9, 9]))    # [1, 0, 0, 0, 0]
+print(solution.plus_one([1,2,3]))    # [1,2,4]
+print(solution.plus_one([4,3,2,1]))    # [4,3,2,2]
+print(solution.plus_one([0]))    # [1]
+print(solution.plus_one([9]))    # [1, 0]
+print(solution.plus_one([9, 9]))    # [1, 0, 0 ]
+print(solution.plus_one([9, 9, 9]))    # [1, 0, 0, 0]
+print(solution.plus_one([9, 9, 9, 9]))    # [1, 0, 0, 0, 0]
