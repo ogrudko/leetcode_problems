@@ -9,15 +9,9 @@ You must write an algorithm with O(log n) runtime complexity.
 import bisect
 
 class Solution:
-    def searchInsert(self, nums, target):
-        return bisect.bisect_left(nums, target)
+    def search_insert(self, nums, target):
+        if type(target) is int:
+            return bisect.bisect_left(nums, target)
+        return -1
 
 
-solution = Solution()
-print(solution.searchInsert([1,3,5,6], 5)) # 2
-print(solution.searchInsert([1,3,5,6], 2)) # 1
-print(solution.searchInsert([1,3,5,6], 7)) # 4
-print(solution.searchInsert([1,3,5,6], 0)) # 0
-print(solution.searchInsert([1], 0)) #       0
-print(solution.searchInsert([1,3,5], 4)) #   2
-print(solution.searchInsert([2,7,8,9,10], 9)) # 3

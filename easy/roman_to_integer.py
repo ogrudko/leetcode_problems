@@ -21,36 +21,40 @@ Given a roman numeral, convert it to an integer.
 '''
 
 # Solution
-
-user_input = input("Bring your Roman number:")
-transform_dict = {
-            "I": 1,
-            "V": 5,
-            "X": 10,
-            "L": 50,
-            "C": 100,
-            "D": 500,
-            "M": 1000
-        }
-output = 0
-result = []
-if len(user_input) == 1:
-    output = transform_dict[user_input]
-else:
-    for i in range(len(user_input)):
-        output += transform_dict[user_input[i]]
-        if i > 0:
-            if user_input[i] == "M" and user_input[i - 1] == "C":
-                output -= 200
-            elif user_input[i] == "D" and user_input[i - 1] == "C":
-                output -= 200
-            elif user_input[i] == "C" and user_input[i - 1] == "X":
-                output -= 20
-            elif user_input[i] == "L" and user_input[i - 1] == "X":
-                output -= 20
-            elif user_input[i] == "X" and user_input[i - 1] == "I":
-                output -= 2
-            elif user_input[i] == "V" and user_input[i - 1] == "I":
-                output -= 2
-
-print(output)
+class Solution():
+    def roman_to_int(self, roman: str) -> int:
+        transform_dict = {
+                    "I": 1,
+                    "V": 5,
+                    "X": 10,
+                    "L": 50,
+                    "C": 100,
+                    "D": 500,
+                    "M": 1000
+                }
+        output = 0
+        if len(roman) == 1:
+            if roman not in transform_dict:
+                return output
+            output = transform_dict[roman]
+        else:
+            for i in range(len(roman)):
+                if roman[i] not in transform_dict:
+                    output = 0
+                    break
+                else:
+                    output += transform_dict[roman[i]]
+                    if i > 0:
+                        if roman[i] == "M" and roman[i - 1] == "C":
+                            output -= 200
+                        elif roman[i] == "D" and roman[i - 1] == "C":
+                            output -= 200
+                        elif roman[i] == "C" and roman[i - 1] == "X":
+                            output -= 20
+                        elif roman[i] == "L" and roman[i - 1] == "X":
+                            output -= 20
+                        elif roman[i] == "X" and roman[i - 1] == "I":
+                            output -= 2
+                        elif roman[i] == "V" and roman[i - 1] == "I":
+                            output -= 2
+        return output
