@@ -2,7 +2,7 @@
 set of parametrized test cases to verify functional correctnes of longest_substring_without_repeat.py solution
 '''
 import pytest
-from easy.longest_substring_without_repeat import Solution
+from medium.longest_substring_without_repeat import Solution
 
 cases = [
     ('abcabcbb', 3),
@@ -11,7 +11,8 @@ cases = [
     ('', 0),
     ('abcaqzwdb', 7),
     ('tmmzuxt', 5),
-    ('ohvhjdml', 6)
+    ('ohvhjdml', 6),
+    ('qblqcb', 4)
 ]
 
 @pytest.mark.parametrize('s, result', cases)

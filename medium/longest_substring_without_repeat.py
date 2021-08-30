@@ -51,20 +51,20 @@ class Solution:
                 if char not in used_chars:
                     substring += char
                     used_chars[char] = 1
-                    if len(substring) > length_longest_substring:
-                        length_longest_substring  = len(substring)
                 else:
                     if substring[0] == char:
                         substring.pop(0)
                         substring += char
                     else:
-                        substring = []
+                        substring = substring[(substring.index(char) + 1):]
                         used_chars = {}
                         substring += char
                         used_chars[char] = 1
+                if len(substring) > length_longest_substring:
+                    length_longest_substring  = len(substring)
             return length_longest_substring
  
 
 solution = Solution()
-print(solution.length_of_longest_substring('pwwkew'))
+print(solution.length_of_longest_substring('qblqcb'))
 
